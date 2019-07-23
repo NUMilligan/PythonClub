@@ -1,12 +1,18 @@
+import re
+
 unit = "carboy"
-substance = "sulfuric acid"
+substance = "muriatic acid"
 location = "rack"
 
 def pluralize (word:str, quantity:int=2) -> str:
     if quantity == 1:
         retval=word
     else:
-        retval=word + "s"
+        ends_in_y = re.match(r'\w+[^aeiou]y',word)
+        if ends_in_y:
+            retval=word[:-1] + "ies"
+        else:
+            retval=word + "s"
 
     return retval
 
