@@ -1,6 +1,6 @@
 import re
 
-unit = "carboy"
+unit = "bongo"
 substance = "muriatic acid"
 location = "rack"
 
@@ -8,9 +8,10 @@ def pluralize (word:str, quantity:int=2) -> str:
     if quantity == 1:
         retval=word
     else:
-        ends_in_y = re.match(r'\w+[^aeiou]y',word)
-        if ends_in_y:
+        if re.match(r'\w+[^aeiou]y$',word):
             retval=word[:-1] + "ies"
+        elif re.match(r'\w+[^aeiou]o$',word):
+            retval=word[:-1] + "oes"
         else:
             retval=word + "s"
 
