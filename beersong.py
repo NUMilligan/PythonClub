@@ -1,6 +1,6 @@
 import re
 
-unit = "bongo"
+unit = "carboy"
 substance = "muriatic acid"
 location = "rack"
 
