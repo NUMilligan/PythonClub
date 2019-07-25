@@ -35,6 +35,8 @@ class Song:
                 else:
                     self.display_and_speak(th.stringify ("If one of those",th.pluralize(self.unit,unit_num),"should happen to fall"))
                     self.display_and_speak(th.stringify ("That's",unit_num-1,th.pluralize(self.unit,unit_num-1),"of",self.substance,"on the",self.location))
+
+                print()
         
         print("The end")
         print()
