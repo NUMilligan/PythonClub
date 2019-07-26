@@ -8,54 +8,15 @@ class Stanza:
         self.lines.append(line)
 
 class Song:
-    def  __init__ (self, howmany:int = 99, unit:str = "carboy",substance:str = "muriatic acid", location:str = "rack", speaker = None) -> None:
+    def  __init__ (self, howmany:int = 99, unit:str = "carboy",substance:str = "muriatic acid", location:str = "rack") -> None:
         self.howmany = howmany
         self.unit = unit
         self.substance = substance
         self.location = location
-        self.speaker = speaker
         self.stanzas = []
         self.title = ""
 
         self.compose()
-
-    def speakline (self, text:str) -> None:
-        if self.speaker != None:
-            self.speaker.Speak (text)
-
-    def show (self) -> None:
-        print(self.title)
-        print()
-
-        for stanza in self.stanzas:
-            for line in stanza.lines:
-                print(line)
-            
-            print()
-        
-        print("The End")
-
-    def speak (self) -> None:
-        self.speakline(self.title)
-
-        for stanza in self.stanzas:
-            for line in stanza.lines:
-                self.speakline(line)
-
-    def sing (self) -> None:
-        print(self.title)
-        self.speakline(self.title)
-        print()
-
-        for stanza in self.stanzas:
-            for line in stanza.lines:
-                print(line)
-                self.speakline(line)
-            
-            print()
-
-        print("The End")
-        print()
 
     def perform (self, *args) -> None:
         for func in args:
